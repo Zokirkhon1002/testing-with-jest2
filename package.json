@@ -6,6 +6,7 @@
   "scripts": {
     "ex1": "jest ex1",
     "ex2": "jest ex2",
+    "ex3": "jest ex3",
     "test": "jest"
   },
   "keywords": [],
