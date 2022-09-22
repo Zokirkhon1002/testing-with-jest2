@@ -25,10 +25,12 @@ one of the numbers is 100 or if the sum of the two numbers is 100
     expect(isEqualToo100(50, 50)).toBe(true);
     expect(isEqualToo100(30, 70)).toBe(true);
     expect(isEqualToo100(20, 80)).toBe(true);
+    expect(isEqualToo100(20, 70)).not.toBe(true);
   });
 
   it("should return false if the first number or second number or sum of the numbers is 100", () => {
     expect(isEqualToo100(10, 50)).toBe(false);
+    expect(isEqualToo100(50, 50)).not.toBe(false);
   });
 });
 
@@ -98,7 +100,8 @@ and returns it in the format dd/mm/yyyy specific format.
 
     const exptectedResult = `${day}/${month}/${year}`;
 
-    expect(todaysDate()).toBe(exptectedResult);
+    expect(todaysDate()).toMatch(exptectedResult);
+    // toMatch for string
   });
 });
 
@@ -109,25 +112,26 @@ another provided string and return it. The original string should
 be returned if it already starts with the string to prefix.
 `, () => {
   it("should prefix a string with the provided value", () => {
-    expect(prefixText("Javascript", "groovy")).toBe("groovy Javascript");
+    // toMatch for string
+    expect(prefixText("Javascript", "groovy")).toMatch("groovy Javascript");
   });
 
   it("should not apply the prefixed string provided if it already exists at the start of the string", () => {
-    expect(prefixText("JavaScript", "JavaScript")).toBe("JavaScript");
-    expect(prefixText("JavaScript is Groovy", "JavaScript")).toBe(
+    expect(prefixText("JavaScript", "JavaScript")).toMatch("JavaScript");
+    expect(prefixText("JavaScript is Groovy", "JavaScript")).toMatch(
       "JavaScript is Groovy"
     );
   });
 
   test("should return the original string if no prefix is provided", () => {
-    expect(prefixText("Original String")).toBe("Original String");
+    expect(prefixText("Original String")).toMatch("Original String");
   });
 
   test("should return an empty string if there is a prefix and no string to prefix is provided", () => {
-    expect(prefixText(null, "prefix")).toBe("");
+    expect(prefixText(null, "prefix")).toBeFalsy();
   });
 
   test("should return just the prefix if the original text is empty", () => {
-    expect(prefixText("", "prefix")).toBe("prefix");
+    expect(prefixText("", "prefix")).toMatch("prefix");
   });
 });

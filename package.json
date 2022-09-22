@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ex1": "jest"
+    "ex1": "jest ex1",
+    "ex2": "jest ex2",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
