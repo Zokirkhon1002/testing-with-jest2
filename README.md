@@ -19,3 +19,8 @@
 
 <img src="./pictures/ex3result.png" alt="ex3result" />
 
+
+
+# All Results
+
+<img src="./pictures/allresult.png" alt="allresult" />
