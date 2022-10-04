@@ -1,6 +1,7 @@
 // @ts-nocheck
-const { ex1, ex2, ex3 } = require("../masalalar/ex3");
+const { ex1, ex2, ex3, ex4 } = require("../masalalar/ex3");
 
+// ex1
 describe(`
 Write a JavaScript program to find the number of even digits in a an array of integers
 `, () => {
@@ -26,6 +27,7 @@ Write a JavaScript program to find the number of even digits in a an array of in
   });
 });
 
+// ex2
 describe(`
 Write a JavaScript program to find the number of odd digits in a an array of integers
 `, () => {
@@ -37,6 +39,7 @@ Write a JavaScript program to find the number of odd digits in a an array of int
   });
 });
 
+// ex3
 describe(`
 Write a JavaScript program to check whether a given array of integers is sorted in ascending
 order
@@ -70,5 +73,49 @@ order
 
     expect(ex3(tempArr)).toEqual(true);
     expect(ex3(tempArr)).not.toEqual(false);
+  });
+});
+
+// ex4
+describe(`
+Write a JavaScript program to get the largest even number from an array of integers
+`, () => {
+  test("should return the largest even number from an array of integers", () => {
+    let tempArr = [5, 4, 6, 3, 7, 2, 8, 9];
+
+    expect(ex4(tempArr)).toBe(8);
+    expect(ex4(tempArr)).toBeTruthy;
+    expect(ex4(tempArr)).toEqual(8);
+  });
+
+  it("should return the positive number if array has even number", () => {
+    let tempArr = [5, 4, 6, 3, 7, 2, 8, 9];
+
+    expect(ex4(tempArr)).toBeGreaterThan(0);
+    expect(ex4(tempArr)).not.toBeLessThan(1);
+  });
+
+  test("should return the zero if there is not any even numbers in the array", () => {
+    let tempArr = [5, 3, 7, 9];
+
+    expect(ex4(tempArr)).not.toBeGreaterThanOrEqual(1);
+    expect(ex4(tempArr)).toBeLessThanOrEqual(0);
+  });
+
+  test("should not return false or any other falsy result except zero(0)", () => {
+    let tempArr = ["as", "asda"];
+
+    expect(ex4(tempArr)).toBe(0);
+    expect(isNaN(ex4(tempArr))).toBe(false);
+    expect(isNaN(ex4(tempArr))).not.toBe(true);
+    expect(isNaN(ex4(tempArr))).not.toBeTruthy();
+    expect(ex4(tempArr)).not.toBe("");
+    expect(ex4(tempArr)).not.toBe([]);
+    expect(ex4(tempArr)).not.toBe({});
+    expect(ex4(tempArr)).toBeLessThanOrEqual(0);
+    expect(ex4(tempArr)).not.toBeTruthy();
+    expect(ex4(tempArr)).not.toBeUndefined();
+    expect(ex4(tempArr)).not.toBeNull();
+    expect(ex4(tempArr)).toBeDefined();
   });
 });
