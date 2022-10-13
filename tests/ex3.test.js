@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { ex1, ex2, ex3, ex4 } = require("../masalalar/ex3");
+const { ex1, ex2, ex3, ex4, ex5 } = require("../masalalar/ex3");
 
 // ex1
 describe(`
@@ -117,5 +117,35 @@ Write a JavaScript program to get the largest even number from an array of integ
     expect(ex4(tempArr)).not.toBeUndefined();
     expect(ex4(tempArr)).not.toBeNull();
     expect(ex4(tempArr)).toBeDefined();
+  });
+});
+
+// ex5
+describe(`
+Write a JavaScript program to replace the first digit in a string (should contain at least one
+  digit) with a $ character.
+`, () => {
+  test("should return a string that first digit replaced with a $ character", () => {
+    let tempText = "afslbi12ub3fa";
+    let result = "afslbi$2ub3fa";
+    expect(ex5(tempText)).toBe(result);
+    expect(ex5(tempText)).toEqual(result);
+  });
+  test("should return a string that first digit replaced with a $ character", () => {
+    let tempText = "afslbi12ub3fa";
+    expect(ex5(tempText)).toMatch(/$/);
+    expect(ex5(tempText)).not.toMatch(tempText);
+  });
+  test("should return a string that first digit replaced with a $ character", () => {
+    let tempText = "afslbi12ub3fa";
+    expect(ex5(tempText)).not.toBe(tempText);
+    expect(ex5(tempText)).not.toMatch(tempText);
+  });
+  test("should return a string that first digit replaced with a $ character", () => {
+    let tempText = "afslbi12ub3fa";
+    expect(ex5(tempText)).not.toBe(tempText);
+    expect(ex5(tempText)).not.toBe("");
+    expect(ex5(tempText)).not.toBe([]);
+    expect(ex5(tempText)).not.toBe({});
   });
 });

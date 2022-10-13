@@ -19,9 +19,12 @@ const ex4 = (/** @type {number[]} */ arr) => {
   return result >= 1 ? result : 0;
 };
 
+const ex5 = (/** @type {string} */ str) => str.replace(/\d/, "$");
+
 module.exports = {
   ex1,
   ex2,
   ex3,
   ex4,
+  ex5,
 };
