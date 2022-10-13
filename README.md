@@ -1,7 +1,7 @@
 # testing-with-jest2
 
 
-### some results:)
+# some results:)
 
 # ex1.js file and ex1.test.js
 
