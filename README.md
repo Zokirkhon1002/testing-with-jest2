@@ -14,7 +14,7 @@
 
 <img src="./pictures/ex3result.png" alt="ex3result" />
 
-# ex4.js file and ex3.test.js
+# ex4.js file and ex4.test.js
 
 <img src="./pictures/ex4result.png" alt="ex4result" />
 
