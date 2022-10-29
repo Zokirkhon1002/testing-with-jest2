@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { ex1, ex2, ex3 } = require("../masalalar/ex4");
+const { ex1, ex2, ex3, ex4 } = require("../masalalar/ex4");
 
 describe(`
 Given a year, report if it is a leap year.
@@ -98,5 +98,48 @@ abc,def,ghi\njkl,mno,pqr\nstu,vwx,yza
     expect(result).toContainEqual(a3);
     expect(result).toContainEqual(a2);
     expect(result).toContainEqual(a1);
+  });
+});
+
+describe(`
+Write a JavaScript program to generate a random hexadecimal color code.
+`, () => {
+  test("should return true if # in the value", () => {
+    let char = "#";
+    let result = ex4();
+    expect(result).toEqual(expect.stringContaining(char));
+    expect(result).toMatch(/#[a-f0-9]/);
+  });
+
+  test("should return true if length of value equal 7", () => {
+    let len = 7;
+    let result = ex4(len).length;
+    expect(result).toEqual(7);
+  });
+  test("should return true if one of 'abcdef0123456789' is in value", () => {
+    let result = ex4();
+    expect(result).toMatch(/#[abcdef0123456789]/);
+  });
+  test("should return true if length of return not equal 7", () => {
+    let result = ex4().length;
+    expect(result).not.toBe(9);
+    expect(result).not.toEqual(5);
+    expect(result).toBeGreaterThan(6);
+    expect(result).toBeLessThan(8);
+  });
+  test("should return true if one of 'abcdef0123456789' is not in value", () => {
+    let result = ex4();
+    expect(result).not.toMatch(/[higklmnopqrstuvwxyz]/);
+  });
+  test("should return true if value's type is string", () => {
+    let result = ex4();
+    expect(typeof result).toBe("string");
+    expect(typeof result).toEqual("string");
+  });
+  test("should return true if value's type is not number, object and boolean", () => {
+    let result = ex4();
+    expect(typeof result).not.toBe("number");
+    expect(typeof result).not.toEqual("object");
+    expect(typeof result).not.toMatch("boolean");
   });
 });

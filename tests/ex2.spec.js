@@ -89,12 +89,12 @@ character.
   });
 
   it("shoud return false if given string does not contain 2 to 4 occurrences of a specified character", () => {
-    expect(ex5("asdfwe*qw231","a")).toBeFalsy();
-    expect(ex5("asdfwe*qw231","a")).not.toBeTruthy();
+    expect(ex5("asdfwe*qw231", "a")).toBeFalsy();
+    expect(ex5("asdfwe*qw231", "a")).not.toBeTruthy();
   });
 
   it("shoud return false if given string does not contain 2 to 4 occurrences of a specified character", () => {
-    expect(ex5("asdfawe*aqwa23a1","a")).toBeFalsy();
-    expect(ex5("asdfawe*aqwa23a1","a")).not.toBeTruthy();
+    expect(ex5("asdfawe*aqwa23a1", "a")).toBeFalsy();
+    expect(ex5("asdfawe*aqwa23a1", "a")).not.toBeTruthy();
   });
 });
