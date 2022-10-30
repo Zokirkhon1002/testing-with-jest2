@@ -18,6 +18,10 @@
 
 <img src="./pictures/ex4result.png" alt="ex4result" />
 
+# ex5.js file and ex5.test.js
+
+<img src="./pictures/ex5result.png" alt="ex5result" />
+
 # All Results
 
 <img src="./pictures/allresult.png" alt="allresult" />

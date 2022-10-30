@@ -21,9 +21,16 @@ const ex4 = () => {
   return result;
 };
 
+// ex5;
+const ex5 = (
+  /** @type {number[]} */ arr,
+  /** @type {(arg: number[]) => Boolean} */ fn
+) => fn(arr) || false;
+
 module.exports = {
   ex1,
   ex2,
   ex3,
   ex4,
+  ex5,
 };

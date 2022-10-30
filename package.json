@@ -1,13 +1,14 @@
 {
   "name": "1",
   "version": "1.0.0",
-  "description": "",
+  "description": "unit tests",
   "main": "index.js",
   "scripts": {
     "ex1": "jest ex1",
     "ex2": "jest ex2",
     "ex3": "jest ex3",
     "ex4": "jest ex4",
+    "ex5": "jest ex5",
     "test": "jest"
   },
   "keywords": [],

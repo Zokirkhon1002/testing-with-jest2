@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { ex1, ex2, ex3, ex4 } = require("../masalalar/ex4");
+const { ex1, ex2, ex3, ex4, ex5 } = require("../masalalar/ex4");
 
 describe(`
 Given a year, report if it is a leap year.
@@ -141,5 +141,37 @@ Write a JavaScript program to generate a random hexadecimal color code.
     expect(typeof result).not.toBe("number");
     expect(typeof result).not.toEqual("object");
     expect(typeof result).not.toMatch("boolean");
+  });
+});
+
+describe(`
+Write a JavaScript function that returns true if the provided predicate function returns true
+for all elements in a collection, false otherwise.
+`, () => {
+  test("should return true if all numbers in the array less than six", () => {
+    let tempArr = [1, 2, 3, 4, 5];
+    let tempNum = 6;
+    let result = ex5(tempArr, (arr) => arr.every((x) => x < tempNum));
+    expect(result).toBe(true);
+    expect(result).toEqual(true);
+  });
+
+  test("should return true if all numbers in the array greater than zero", () => {
+    let tempArr = [1, 2, 3, 4, 5];
+    let tempNum = 0;
+    let result = ex5(tempArr, (arr) => arr.every((x) => x > tempNum));
+    expect(result).toBe(true);
+    expect(result).toEqual(true);
+  });
+
+  test("should return false if one of numbers in the array less than \
+    \n\tor equal 5 and one of them is greater than or eqaul 5", () => {
+    let tempArr = [1, 2, 3, 4, 5, 7, 6];
+    let tempNum = 5;
+    let result = ex5(tempArr, (arr) => arr.every((x) => x <= tempNum));
+    expect(result).toBe(false);
+    expect(result).toEqual(false);
+    expect(result).not.toBe(true);
+    expect(result).not.toEqual(true);
   });
 });
