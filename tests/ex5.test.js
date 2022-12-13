@@ -1,5 +1,5 @@
 // @ts-nocheck
-const { ex1 } = require("../masalalar/ex5");
+const { ex1, ex2 } = require("../masalalar/ex5");
 
 describe(`
 Write a JavaScript function that returns a passed string with letters in alphabetical order.
@@ -34,4 +34,47 @@ Expected Output: 'abeemrstw'
   });
 });
 
-// console.log(ex1("Adfajsrewqpih")); // aAdefhijpqrsw
+describe(`
+Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.
+`, () => {
+  test("should return new Error 'argument must be string and can not be empty'\
+    if argument doesn't give", () => {
+    expect(ex2).toThrow();
+    expect(ex2).toThrow(/argument must be string and can not be empty/);
+  });
+  test("should return counts the number of vowels with in the string", () => {
+    let tempExample = "zokirkhon";
+    let result = ex2(tempExample);
+    expect(result).toBe(3);
+    expect(result).toEqual(3);
+    expect(result).not.toBe(2);
+    expect(result).not.toEqual(4);
+    expect(result).toBeGreaterThan(2);
+    expect(result).toBeLessThan(4);
+    expect(result).toBeGreaterThanOrEqual(3);
+    expect(result).toBeLessThanOrEqual(3);
+  });
+  it("should return 0 if there are not any vowels given within the string", () => {
+    let tempExample = "sdfghjklzxcvbnm";
+    let result = ex2(tempExample);
+    expect(result).toBe(0);
+    expect(result).not.toBe(1);
+    expect(result).not.toBe(-1);
+
+    expect(result).not.toBeTruthy();
+    expect(result).toBeFalsy();
+
+    expect(result).not.toBeNull();
+    expect(result).not.toBeUndefined();
+
+    expect(result).toEqual(0);
+    expect(result).not.toEqual(4);
+    expect(result).not.toEqual(-2);
+
+    expect(result).toBeGreaterThan(-1);
+    expect(result).toBeLessThan(1);
+
+    expect(result).toBeGreaterThanOrEqual(0);
+    expect(result).toBeLessThanOrEqual(0);
+  });
+});
